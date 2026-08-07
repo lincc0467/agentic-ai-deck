@@ -13,11 +13,13 @@ export default {
   id: 'A',
   name: '敘事軸',
   desc: '深墨底 + 單一橙，一條階梯敘事軸貫穿全場',
-  fonts: `<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">`,
+  fonts: `<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">`,
 
   css: `
   body { background:${C.bg}; font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; }
-  .mono { font-family:"JetBrains Mono","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
+  /* 等寬字用系統內建款（Windows 有 Consolas、macOS 有 Menlo）——
+     PPTX 只保留字型鏈的第一個名稱，用 webfont 會在沒裝字型的機器上 fallback 破版 */
+  .mono { font-family:"Consolas","Menlo","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
   h1,h2,h3 { color:${C.ink}; }
   .kick { font-size:10pt; letter-spacing:0.2em; color:${C.dim}; }
   .h2   { font-size:32pt; font-weight:900; line-height:1.24; letter-spacing:0.01em; color:${C.ink}; }
@@ -214,8 +216,9 @@ export default {
         return t.head(p, ctx) + t.title(p) + cols + `
   <div style="position:absolute; left:64pt;  top:400pt; width:2pt; height:22pt; background:${C.rule};"></div>
   <div style="position:absolute; left:894pt; top:400pt; width:2pt; height:22pt; background:${C.rule};"></div>
-  <div style="position:absolute; left:64pt;  top:420pt; width:832pt; height:2pt; background:${C.rule};"></div>
-  <div style="position:absolute; left:352pt; top:412pt; width:256pt; height:19pt; background:${C.bg};">
+  <div style="position:absolute; left:64pt;  top:420pt; width:284pt; height:2pt; background:${C.rule};"></div>
+  <div style="position:absolute; left:612pt; top:420pt; width:284pt; height:2pt; background:${C.rule};"></div>
+  <div style="position:absolute; left:352pt; top:412pt; width:256pt;">
     <p class="mono" style="font-size:10pt; letter-spacing:0.14em; line-height:19pt; color:${C.dim}; text-align:center;">驗證回饋至目標定義</p>
   </div>` + t.axis(ctx);
       }

@@ -1,5 +1,7 @@
 node_modules/
 package-lock.json
+_pptx-render/
+overview-A.png
 *.log
 .DS_Store
 Thumbs.db

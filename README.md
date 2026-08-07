@@ -32,7 +32,20 @@ npm install
 node render-diagrams.mjs   # 產生圖解 PNG
 node build.mjs             # 生成三套 deck
 node shoot.mjs             # 截圖並驗證
+node scripts/export_deck_pptx.mjs --slides decks/A/slides --out 智能體AI系統設計與應用.pptx
 ```
+
+## 可編輯 PPTX
+
+`智能體AI系統設計與應用.pptx`（20 頁）已隨 repo 附上，文字都是真的文字框，在 PowerPoint 裡雙擊即可編輯；13 張圖解為內嵌圖片，要改圖請改 `diagrams.mjs` 後重跑建置與匯出。
+
+`scripts/` 下的兩個匯出腳本取自 huashu-design skill，並修了三處：
+
+- `html2pptx` 是 CommonJS，專案 `package.json` 為 ESM → 改副檔名為 `.cjs`
+- **Windows 路徑**：`file://` 去除後留下 `/D:/…` 前導斜線，被接成 `D:\D:\…` 導致圖片讀不到 → 加 `fileUrlToPath()`
+- **`letter-spacing` 未被轉換**：pptxgenjs 支援 `charSpacing`，原腳本沒接 → 補上，字距不再遺失
+
+字型用 Consolas / Noto Sans TC——PPTX 只保留字型鏈的第一個名稱，若用 webfont，在沒安裝該字型的機器上會 fallback 破版。
 
 ## 兩個設計決策
 

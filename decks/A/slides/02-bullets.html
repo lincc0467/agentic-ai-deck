@@ -5,14 +5,16 @@
 <title>02 · 什麼是智能體 AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:960pt; height:540pt; position:relative; overflow:hidden; -webkit-font-smoothing:antialiased; }
   h1,h2,h3,h4,h5,h6,p { font-weight:inherit; }
 
   body { background:#F1F2F0; font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; }
-  .mono { font-family:"JetBrains Mono","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
+  /* 等寬字用系統內建款（Windows 有 Consolas、macOS 有 Menlo）——
+     PPTX 只保留字型鏈的第一個名稱，用 webfont 會在沒裝字型的機器上 fallback 破版 */
+  .mono { font-family:"Consolas","Menlo","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
   h1,h2,h3 { color:#14161A; }
   .kick { font-size:10pt; letter-spacing:0.2em; color:#6E7278; }
   .h2   { font-size:32pt; font-weight:900; line-height:1.24; letter-spacing:0.01em; color:#14161A; }

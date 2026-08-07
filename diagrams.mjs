@@ -52,12 +52,13 @@ function archLoop() {
     const x1 = xs[i] + BW + 4, x2 = xs[i + 1] - 4;
     return `<line x1="${x1}" y1="${cy}" x2="${x2}" y2="${cy}" stroke="${P.rule}" stroke-width="1.4" marker-end="url(#ah-arch)"/>`;
   }).join('');
-  const backY = 138;
+  // 回流線在中間斷開讓出文字空間（不用底色方塊：PNG 底色在 PPTX 會露出色差）
+  const backY = 138, gap = 96;
   const sx = xs[3] + BW / 2, ex = xs[0] + BW / 2;
-  const ret = `<path d="M ${sx} ${bottom} L ${sx} ${backY - 10} Q ${sx} ${backY} ${sx - 10} ${backY} L ${ex + 10} ${backY} Q ${ex} ${backY} ${ex} ${backY - 10} L ${ex} ${bottom + 2}"
-      fill="none" stroke="${P.acc}" stroke-width="1.6" marker-end="url(#ah-acc-arch)"/>`;
-  const cap = `<rect x="${W / 2 - 92}" y="${backY - 10}" width="184" height="20" fill="${P.paper}"/>` +
-    label(W / 2, backY + 4.5, '未達成 · 回到目標定義', { size: 11, color: P.acc, weight: 500 });
+  const ret =
+    `<path d="M ${sx} ${bottom} L ${sx} ${backY - 10} Q ${sx} ${backY} ${sx - 10} ${backY} L ${W / 2 + gap} ${backY}" fill="none" stroke="${P.acc}" stroke-width="1.6"/>` +
+    `<path d="M ${W / 2 - gap} ${backY} L ${ex + 10} ${backY} Q ${ex} ${backY} ${ex} ${backY - 10} L ${ex} ${bottom + 2}" fill="none" stroke="${P.acc}" stroke-width="1.6" marker-end="url(#ah-acc-arch)"/>`;
+  const cap = label(W / 2, backY + 4.5, '未達成 · 回到目標定義', { size: 11, color: P.acc, weight: 500 });
   return wrap(W, 152, defs('arch') + boxes + arrows + ret + cap);
 }
 
@@ -85,11 +86,11 @@ function pipeIterative() {
     label(x + BW / 2, cy + 5, names[i], { size: 14, color: i === 3 ? P.acc : P.ink })).join('');
   const arrows = [0, 1, 2].map((i) =>
     `<line x1="${xs[i] + BW + 4}" y1="${cy}" x2="${xs[i + 1] - 4}" y2="${cy}" stroke="${P.rule}" stroke-width="1.4" marker-end="url(#ah-iter)"/>`).join('');
-  const sx = xs[3] + BW / 2, ex = xs[0] + BW / 2, by = 62;
-  const ret = `<path d="M ${sx} 48 L ${sx} ${by - 8} Q ${sx} ${by} ${sx - 8} ${by} L ${ex + 8} ${by} Q ${ex} ${by} ${ex} ${by - 8} L ${ex} 50"
-      fill="none" stroke="${P.acc}" stroke-width="1.5" marker-end="url(#ah-acc-iter)"/>`;
+  const sx = xs[3] + BW / 2, ex = xs[0] + BW / 2, by = 62, g = 64;
+  const ret =
+    `<path d="M ${sx} 48 L ${sx} ${by - 8} Q ${sx} ${by} ${sx - 8} ${by} L ${W / 2 + g} ${by}" fill="none" stroke="${P.acc}" stroke-width="1.5"/>` +
+    `<path d="M ${W / 2 - g} ${by} L ${ex + 8} ${by} Q ${ex} ${by} ${ex} ${by - 8} L ${ex} 50" fill="none" stroke="${P.acc}" stroke-width="1.5" marker-end="url(#ah-acc-iter)"/>`;
   return wrap(W, 78, defs('iter') + boxes + arrows + ret +
-    `<rect x="${W / 2 - 62}" y="${by - 9}" width="124" height="18" fill="${P.paper}"/>` +
     label(W / 2, by + 4, '未達標就再一輪', { size: 11, color: P.acc, weight: 500 }));
 }
 
@@ -179,11 +180,11 @@ function agentLoop() {
   ).join('');
   const arrows = [0, 1, 2].map((i) =>
     `<line x1="${xs[i] + BW + 4}" y1="${cy}" x2="${xs[i + 1] - 4}" y2="${cy}" stroke="${P.rule}" stroke-width="1.4" marker-end="url(#ah-al)"/>`).join('');
-  const sx = xs[3] + BW / 2, ex = xs[0] + BW / 2, by = 162;
-  const ret = `<path d="M ${sx} ${cy + BH / 2} L ${sx} ${by - 10} Q ${sx} ${by} ${sx - 10} ${by} L ${ex + 10} ${by} Q ${ex} ${by} ${ex} ${by - 10} L ${ex} ${cy + BH / 2 + 2}"
-    fill="none" stroke="${P.acc}" stroke-width="1.6" marker-end="url(#ah-acc-al)"/>`;
-  const cap = `<rect x="${W / 2 - 108}" y="${by - 10}" width="216" height="20" fill="${P.paper}"/>` +
-    label(W / 2, by + 4.5, '環境改變 · 持續感知，不等指令', { size: 11, color: P.acc, weight: 500 });
+  const sx = xs[3] + BW / 2, ex = xs[0] + BW / 2, by = 162, g = 112;
+  const ret =
+    `<path d="M ${sx} ${cy + BH / 2} L ${sx} ${by - 10} Q ${sx} ${by} ${sx - 10} ${by} L ${W / 2 + g} ${by}" fill="none" stroke="${P.acc}" stroke-width="1.6"/>` +
+    `<path d="M ${W / 2 - g} ${by} L ${ex + 10} ${by} Q ${ex} ${by} ${ex} ${by - 10} L ${ex} ${cy + BH / 2 + 2}" fill="none" stroke="${P.acc}" stroke-width="1.6" marker-end="url(#ah-acc-al)"/>`;
+  const cap = label(W / 2, by + 4.5, '環境改變 · 持續感知，不等指令', { size: 11, color: P.acc, weight: 500 });
   // 「環境」置於第一格正上方，虛線短接進感知，不懸空
   const top = label(ex, 22, '外部環境', { size: 11.5, color: P.dim, weight: 500 }) +
     `<line x1="${ex}" y1="30" x2="${ex}" y2="${cy - BH / 2 - 5}" stroke="${P.rule}" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ah-al)"/>`;
@@ -213,10 +214,10 @@ function verifyGates() {
   const fails = xs.map((x) =>
     `<path d="M ${x + gw / 2} ${gy + gh} L ${x + gw / 2} ${by}" fill="none" stroke="${P.acc}" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.75"/>`).join('');
   // 回流線整條走 accent 色，從最後一關拉回第一關的左緣
-  const bar = `<path d="M ${xs[2] + gw / 2} ${by} L ${xs[0] + gw / 2} ${by}" fill="none" stroke="${P.acc}" stroke-width="1.4"/>` +
-    `<path d="M ${xs[0] + gw / 2} ${by} L 8 ${by} L 8 ${gy + gh / 2 + 10}" fill="none" stroke="${P.acc}" stroke-width="1.4" marker-end="url(#ah-acc-vg)"/>`;
-  const cap = `<rect x="${xs[1] + gw / 2 - 84}" y="${by - 9}" width="168" height="18" fill="${P.paper}"/>` +
-    label(xs[1] + gw / 2, by + 4, '任一關不過 · 自動修正重跑', { size: 10.5, color: P.acc, weight: 500 });
+  const mid = xs[1] + gw / 2, g = 88;
+  const bar = `<path d="M ${xs[2] + gw / 2} ${by} L ${mid + g} ${by}" fill="none" stroke="${P.acc}" stroke-width="1.4"/>` +
+    `<path d="M ${mid - g} ${by} L 8 ${by} L 8 ${gy + gh / 2 + 10}" fill="none" stroke="${P.acc}" stroke-width="1.4" marker-end="url(#ah-acc-vg)"/>`;
+  const cap = label(mid, by + 4, '任一關不過 · 自動修正重跑', { size: 10.5, color: P.acc, weight: 500 });
   return wrap(W, H, defs('vg') + gates + arrows + ok + okArrow + fails + bar + cap);
 }
 
@@ -318,9 +319,8 @@ function boundary() {
     box(x, y, colW, colH, { stroke: on ? P.acc : P.rule, sw: on ? 1.6 : 1 }) +
     label(x + 16, y + 24, title, { size: 13.5, anchor: 'start', color: on ? P.acc : P.mut }) +
     items.map((s, i) => label(x + 16, y + 50 + i * 21, `· ${s}`, { size: 11.5, color: P.mut, weight: 400, anchor: 'start' })).join('');
-  const line = `<line x1="${W / 2}" y1="4" x2="${W / 2}" y2="${y + colH + 12}" stroke="${P.acc}" stroke-width="1.6" stroke-dasharray="5 4"/>`;
-  const badge = `<rect x="${W / 2 - 44}" y="${y + colH + 4}" width="88" height="20" fill="${P.paper}"/>` +
-    label(W / 2, y + colH + 18.5, '責任邊界', { size: 11, color: P.acc, weight: 500 });
+  const line = `<line x1="${W / 2}" y1="4" x2="${W / 2}" y2="${y + colH + 4}" stroke="${P.acc}" stroke-width="1.6" stroke-dasharray="5 4"/>`;
+  const badge = label(W / 2, y + colH + 22, '責任邊界', { size: 11, color: P.acc, weight: 500 });
   const cap = label(W / 2, 174, '邊界要在設計階段畫死，不是出事後才補', { size: 11, color: P.dim, weight: 400 });
   return wrap(W, H, defs('bd') + col(4, 'Agent 自主區', leftItems, false) + col(W - colW - 4, '需人工確認', rightItems, true) + line + badge + cap);
 }
@@ -345,9 +345,10 @@ function toolSequence() {
   const toParse = `<line x1="${backX + 6}" y1="${y1}" x2="482" y2="${y1}" stroke="${P.rule}" stroke-width="1.3" marker-end="url(#ah-ts)"/>`;
   // 重試：從解析結果上緣繞回發出呼叫
   const ty = 22;
-  const err = `<path d="M 547 ${y1 - 15} L 547 ${ty + 8} Q 547 ${ty} 539 ${ty} L ${callX + 8} ${ty} Q ${callX} ${ty} ${callX} ${ty + 8} L ${callX} ${y1 - 8}"
-      fill="none" stroke="${P.acc}" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ah-acc-ts)"/>` +
-    `<rect x="${W / 2 - 96}" y="${ty - 9}" width="192" height="18" fill="${P.paper}"/>` +
+  const g = 92;
+  const err =
+    `<path d="M 547 ${y1 - 15} L 547 ${ty + 8} Q 547 ${ty} 539 ${ty} L ${W / 2 + g} ${ty}" fill="none" stroke="${P.acc}" stroke-width="1.4" stroke-dasharray="4 3"/>` +
+    `<path d="M ${W / 2 - g} ${ty} L ${callX + 8} ${ty} Q ${callX} ${ty} ${callX} ${ty + 8} L ${callX} ${y1 - 8}" fill="none" stroke="${P.acc}" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ah-acc-ts)"/>` +
     label(W / 2, ty + 4, '失敗或格式不符 · 重試', { size: 10.5, color: P.acc, weight: 500 });
   const cap = label(W / 2, 166, '每次工具呼叫都是一次來回，敏感操作在此插入人工確認', { size: 11, color: P.dim, weight: 400 });
   return wrap(W, H, defs('ts') + laneLines + arrows + work + parse + toParse + err + cap);
