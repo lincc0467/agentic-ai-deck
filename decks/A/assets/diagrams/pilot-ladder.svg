@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 186" width="720" height="186">
+  <defs>
+    <marker id="ah-pl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#BFC3BE"/>
+    </marker>
+    <marker id="ah-acc-pl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D4501A"/>
+    </marker>
+    <marker id="ah-off-pl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9EA2A4"/>
+    </marker>
+  </defs><rect x="74" y="124" width="132" height="26" fill="#9EA2A4" opacity="0.3"/><text x="140" y="98" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="20" font-weight="700" fill="#4F5358" text-anchor="middle">小樣本</text><text x="140" y="114" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="10.5" font-weight="400" fill="#6E7278" text-anchor="middle">設計驗證</text><line x1="218" y1="136" x2="268" y2="136" stroke="#BFC3BE" stroke-width="1.3" marker-end="url(#ah-pl)"/><rect x="280" y="110" width="132" height="40" fill="#9EA2A4" opacity="0.3"/><text x="346" y="84" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="20" font-weight="700" fill="#4F5358" text-anchor="middle">加驗一輪</text><text x="346" y="100" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="10.5" font-weight="400" fill="#6E7278" text-anchor="middle">策略微調</text><line x1="424" y1="136" x2="474" y2="136" stroke="#BFC3BE" stroke-width="1.3" marker-end="url(#ah-pl)"/><rect x="486" y="44" width="132" height="106" fill="#D4501A" opacity="1"/><text x="552" y="18" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="20" font-weight="700" fill="#D4501A" text-anchor="middle">全量</text><text x="552" y="34" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="10.5" font-weight="400" fill="#6E7278" text-anchor="middle">執行</text><line x1="52" y1="150" x2="680" y2="150" stroke="#BFC3BE" stroke-width="1.2"/><text x="52" y="26" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="10.5" font-weight="400" fill="#6E7278" text-anchor="start">樣本規模</text><text x="360" y="178" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif" font-size="11" font-weight="400" fill="#6E7278" text-anchor="middle">策略先在小樣本上驗證，確認可行才付出全量成本</text></svg>

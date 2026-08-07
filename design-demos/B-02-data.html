@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>方向B · 案例成果</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:960pt; height:540pt; position:relative; overflow:hidden;
+    background:#F0EEE6;
+    font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif { font-family:"Noto Serif TC","PMingLiU",serif; }
+  .card  { background:#FAF9F5; border:1pt solid #E3DFD4; border-radius:7pt; }
+  .num   { font-family:"Noto Serif TC","PMingLiU",serif; font-size:40pt; font-weight:600;
+           line-height:1; color:#141413; font-variant-numeric:tabular-nums; }
+  .unit  { font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; font-size:12pt; font-weight:400; color:#645E52; }
+  .lbl   { font-size:12pt; line-height:1.45; color:#6B6558; }
+</style>
+</head>
+<body>
+
+  <!-- 左窄欄：章節標記 -->
+  <div style="position:absolute; left:72pt; top:72pt; width:150pt;">
+    <p style="font-size:11pt; font-weight:500; letter-spacing:0.16em; color:#645E52;">03 案例研究</p>
+  </div>
+  <div style="position:absolute; left:72pt; top:100pt; width:150pt;">
+    <p style="font-size:11pt; line-height:1.6; color:#7D7568;">PPO 專家知識<br>蒸餾系統</p>
+  </div>
+  <div style="position:absolute; left:250pt; top:72pt; width:1pt; height:396pt; background:#DCD8CC;"></div>
+
+  <!-- 標題（斷言式整句） -->
+  <div style="position:absolute; left:298pt; top:72pt; width:598pt;">
+    <h2 class="serif" style="font-size:30pt; font-weight:600; line-height:1.34; color:#141413;">四個 Agent 並行八小時，<br>把 200 篇論文變成可複用的知識庫</h2>
+  </div>
+
+  <!-- ── 主數字（clay 只用在這一處） ── -->
+  <div class="card" style="position:absolute; left:298pt; top:186pt; width:286pt; height:130pt; padding:22pt 24pt;" data-pptx-merge="true">
+    <p class="serif" style="font-size:64pt; font-weight:600; line-height:1; color:#D97757; font-variant-numeric:tabular-nums;">200<span style="font-family:'Noto Sans TC',sans-serif; font-size:16pt; font-weight:400; color:#B5866E;">&nbsp;篇</span></p>
+    <p class="lbl" style="margin-top:16pt;">論文全量處理，分四個 Batch 完成</p>
+  </div>
+
+  <!-- 右上兩格 -->
+  <div class="card" style="position:absolute; left:604pt; top:186pt; width:140pt; height:130pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">800<span class="unit">+</span></p>
+    <p class="lbl" style="margin-top:14pt;">輸出檔案</p>
+  </div>
+  <div class="card" style="position:absolute; left:756pt; top:186pt; width:140pt; height:130pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">8<span class="unit">&nbsp;小時</span></p>
+    <p class="lbl" style="margin-top:14pt;">全量處理時間</p>
+  </div>
+
+  <!-- 下排四格 -->
+  <div class="card" style="position:absolute; left:298pt; top:330pt; width:140pt; height:118pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">12<span class="unit">+</span></p>
+    <p class="lbl" style="margin-top:12pt;">架構模式</p>
+  </div>
+  <div class="card" style="position:absolute; left:450pt; top:330pt; width:140pt; height:118pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">100<span class="unit">+</span></p>
+    <p class="lbl" style="margin-top:12pt;">識別技巧</p>
+  </div>
+  <div class="card" style="position:absolute; left:602pt; top:330pt; width:140pt; height:118pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">100<span class="unit">&nbsp;%</span></p>
+    <p class="lbl" style="margin-top:12pt;">驗證成功率<br>（Phase 3）</p>
+  </div>
+  <div class="card" style="position:absolute; left:754pt; top:330pt; width:142pt; height:118pt; padding:20pt;" data-pptx-merge="true">
+    <p class="num">73<span class="unit">&nbsp;%</span></p>
+    <p class="lbl" style="margin-top:12pt;">品質評分<br>（超出目標）</p>
+  </div>
+
+  <!-- 底部註腳 -->
+  <div style="position:absolute; left:298pt; top:472pt; width:598pt;">
+    <p style="font-size:10pt; line-height:1.5; color:#7D7568;">所有成果沉澱為可複用的知識模式，供後續專案直接引用。</p>
+  </div>
+
+</body>
+</html>

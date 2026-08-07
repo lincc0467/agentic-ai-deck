@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>03 · 傳統 AI 與智能體 AI 的差異</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:960pt; height:540pt; position:relative; overflow:hidden; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4,h5,h6,p { font-weight:inherit; }
+
+  body { background:#F1F2F0; font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; }
+  .mono { font-family:"JetBrains Mono","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
+  h1,h2,h3 { color:#14161A; }
+  .kick { font-size:10pt; letter-spacing:0.2em; color:#6E7278; }
+  .h2   { font-size:32pt; font-weight:900; line-height:1.24; letter-spacing:0.01em; color:#14161A; }
+  .lead { font-size:15pt; font-weight:300; line-height:1.55; color:#4F5358; }
+  .k    { font-size:16pt; font-weight:700; line-height:1.4; color:#14161A; }
+  .v    { font-size:13pt; font-weight:300; line-height:1.5; color:#4F5358; }
+  .no   { font-size:15pt; font-weight:500; letter-spacing:0.1em; color:#D4501A; font-variant-numeric:tabular-nums; }
+  .num  { font-size:46pt; font-weight:900; line-height:1; color:#14161A; font-variant-numeric:tabular-nums; }
+  .unit { font-size:13pt; font-weight:400; color:#6E7278; }
+  .lbl  { font-size:12pt; font-weight:300; line-height:1.4; color:#4F5358; }
+  
+</style>
+</head>
+<body>
+
+  <div style="position:absolute; left:64pt; top:46pt; width:600pt;"><p class="mono kick">01 概念與差異</p></div>
+  <div style="position:absolute; left:64pt; top:46pt; width:832pt; text-align:right;"><p class="mono kick">03 / 20</p></div>
+  <div style="position:absolute; left:64pt; top:70pt; width:832pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:69pt; width:124pt; height:3pt; background:#D4501A;"></div>
+  <div style="position:absolute; left:64pt; top:94pt; width:760pt;"><h2 class="h2">傳統 AI 與智能體 AI 的差異</h2></div>
+  <img src="../assets/diagrams/pipe-oneshot.png" style="position:absolute; left:64pt; top:148pt; width:380pt; height:74.8pt;" alt=""><img src="../assets/diagrams/pipe-iterative.png" style="position:absolute; left:500pt; top:148pt; width:380pt; height:74.8pt;" alt="">
+  <div style="position:absolute; left:64pt; top:238pt; width:396pt; height:3pt; background:#BFC3BE;"></div>
+  <div style="position:absolute; left:64pt; top:252pt; width:396pt;"><p style="font-size:18pt; font-weight:700; color:#6E7278;">傳統 AI</p></div>
+  
+  <div style="position:absolute; left:64pt; top:292pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">單次推理（One-shot）</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:318pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:327pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">被動回應使用者輸入</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:353pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:362pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">固定的處理流程</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:388pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:397pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">輸入 → 模型 → 輸出</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:423pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:432pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">有限的上下文理解</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:458pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:467pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:300; line-height:1.4; color:#4F5358;">幻覺問題嚴重</p>
+  </div>
+  <div style="position:absolute; left:64pt; top:493pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:238pt; width:396pt; height:3pt; background:#D4501A;"></div>
+  <div style="position:absolute; left:500pt; top:252pt; width:396pt;"><p style="font-size:18pt; font-weight:700; color:#D4501A;">智能體 AI</p></div>
+  
+  <div style="position:absolute; left:500pt; top:292pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">迭代式推理（Iterative）</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:318pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:327pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">主動規劃與執行</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:353pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:362pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">靈活的自適應流程</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:388pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:397pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">多步驟任務分解與執行</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:423pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:432pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">持續學習與改進</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:458pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:467pt; width:396pt;">
+    <p style="font-size:13.5pt; font-weight:500; line-height:1.4; color:#14161A;">透過驗證降低幻覺</p>
+  </div>
+  <div style="position:absolute; left:500pt; top:493pt; width:396pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:504pt; width:828pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:151pt; top:500pt; width:9pt; height:9pt; background:#D4501A;"></div>
+</body>
+</html>

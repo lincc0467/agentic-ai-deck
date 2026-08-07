@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>11 · 建構推理引擎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:960pt; height:540pt; position:relative; overflow:hidden; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4,h5,h6,p { font-weight:inherit; }
+
+  body { background:#F1F2F0; font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; }
+  .mono { font-family:"JetBrains Mono","Noto Sans TC","Microsoft JhengHei",monospace; font-variant-numeric:tabular-nums; }
+  h1,h2,h3 { color:#14161A; }
+  .kick { font-size:10pt; letter-spacing:0.2em; color:#6E7278; }
+  .h2   { font-size:32pt; font-weight:900; line-height:1.24; letter-spacing:0.01em; color:#14161A; }
+  .lead { font-size:15pt; font-weight:300; line-height:1.55; color:#4F5358; }
+  .k    { font-size:16pt; font-weight:700; line-height:1.4; color:#14161A; }
+  .v    { font-size:13pt; font-weight:300; line-height:1.5; color:#4F5358; }
+  .no   { font-size:15pt; font-weight:500; letter-spacing:0.1em; color:#D4501A; font-variant-numeric:tabular-nums; }
+  .num  { font-size:46pt; font-weight:900; line-height:1; color:#14161A; font-variant-numeric:tabular-nums; }
+  .unit { font-size:13pt; font-weight:400; color:#6E7278; }
+  .lbl  { font-size:12pt; font-weight:300; line-height:1.4; color:#4F5358; }
+  
+</style>
+</head>
+<body>
+
+  <div style="position:absolute; left:64pt; top:46pt; width:600pt;"><p class="mono kick">02 架構與方法　/　STEP 03</p></div>
+  <div style="position:absolute; left:64pt; top:46pt; width:832pt; text-align:right;"><p class="mono kick">11 / 20</p></div>
+  <div style="position:absolute; left:64pt; top:70pt; width:832pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:64pt; top:69pt; width:455pt; height:3pt; background:#D4501A;"></div>
+  <div style="position:absolute; left:64pt; top:94pt; width:760pt;"><h2 class="h2">建構推理引擎</h2></div>
+  
+  <div style="position:absolute; left:64pt; top:173pt; width:832pt; height:1pt; background:#DCDEDB;"></div>
+  
+  <div style="position:absolute; left:64pt; top:182pt; width:286pt;"><p class="k" style="font-size:14pt;">選擇合適的 LLM 模型</p></div>
+  <div style="position:absolute; left:370pt; top:184pt; width:526pt;"><p class="v" style="font-size:12pt;">在成本、延遲、能力匹配之間取捨</p></div>
+  <div style="position:absolute; left:64pt; top:207pt; width:832pt; height:1pt; background:#DCDEDB;"></div>
+  
+  <div style="position:absolute; left:64pt; top:216pt; width:286pt;"><p class="k" style="font-size:14pt;">設計 Prompt 與 Context 管理</p></div>
+  <div style="position:absolute; left:370pt; top:218pt; width:526pt;"><p class="v" style="font-size:12pt;">Context 是疊起來的，不是並列的三件事</p></div>
+  <div style="position:absolute; left:64pt; top:241pt; width:832pt; height:1pt; background:#DCDEDB;"></div>
+  
+  <div style="position:absolute; left:64pt; top:250pt; width:286pt;"><p class="k" style="font-size:14pt;">實作思維鏈（Chain of Thought）</p></div>
+  <div style="position:absolute; left:370pt; top:252pt; width:526pt;"><p class="v" style="font-size:12pt;">讓 Agent 顯式推理每一步，提高可解釋性與準確性</p></div>
+  <div style="position:absolute; left:64pt; top:288pt; width:832pt; height:1pt; background:#DCDEDB;"></div><img src="../assets/diagrams/context-stack.png" style="position:absolute; left:126pt; top:300pt; width:707.5pt; height:188pt;" alt="">
+  <div style="position:absolute; left:64pt; top:504pt; width:828pt; height:1pt; background:#DCDEDB;"></div>
+  <div style="position:absolute; left:500pt; top:500pt; width:9pt; height:9pt; background:#D4501A;"></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>方向C · 案例成果</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:960pt; height:540pt; position:relative; overflow:hidden;
+    background:#FFFFFF;
+    font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .cap  { font-size:10pt; font-weight:500; letter-spacing:0.2em; color:#6E6E6E; }
+  .num  { font-size:44pt; font-weight:700; line-height:1; color:#1A1A1A; font-variant-numeric:tabular-nums; }
+  .unit { font-size:13pt; font-weight:400; color:#6E6E6E; }
+  .lbl  { font-size:12pt; font-weight:400; line-height:1.45; color:#4A4A4A; }
+  .key  { font-size:9pt; font-weight:500; letter-spacing:0.16em; }
+</style>
+</head>
+<body>
+
+  <!-- 左側色帶：本章＝案例研究（紫） -->
+  <div style="position:absolute; left:0; top:0; width:40pt; height:540pt; background:#7B5EA7;"></div>
+
+  <!-- 頂部標籤列 -->
+  <div style="position:absolute; left:88pt; top:52pt; width:500pt;">
+    <p class="cap">03 案例研究 · PPO 專家知識蒸餾系統</p>
+  </div>
+  <div style="position:absolute; left:588pt; top:52pt; width:328pt; text-align:right;">
+    <p class="cap">16 / 20</p>
+  </div>
+  <div style="position:absolute; left:88pt; top:76pt; width:828pt; height:2pt; background:#1A1A1A;"></div>
+
+  <!-- 斷言式標題 -->
+  <div style="position:absolute; left:88pt; top:104pt; width:700pt;">
+    <h2 style="font-size:28pt; font-weight:700; line-height:1.35; color:#1A1A1A;">四個 Agent 並行八小時，把 200 篇論文<br>變成可複用的知識庫</h2>
+  </div>
+
+  <!-- ── 模組網格 4×2，色彩即分類編碼 ── -->
+
+  <!-- 規模（藍） -->
+  <div style="position:absolute; left:88pt; top:216pt; width:198pt; height:4pt; background:#2E6DA4;"></div>
+  <div style="position:absolute; left:88pt; top:232pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#2E6DA4;">規模</p>
+    <p class="num" style="margin-top:10pt;">200<span class="unit">&nbsp;篇</span></p>
+    <p class="lbl" style="margin-top:10pt;">論文全量處理</p>
+  </div>
+
+  <div style="position:absolute; left:298pt; top:216pt; width:198pt; height:4pt; background:#2E6DA4;"></div>
+  <div style="position:absolute; left:298pt; top:232pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#2E6DA4;">規模</p>
+    <p class="num" style="margin-top:10pt;">800<span class="unit">+ 個</span></p>
+    <p class="lbl" style="margin-top:10pt;">輸出檔案</p>
+  </div>
+
+  <!-- 產出（綠） -->
+  <div style="position:absolute; left:508pt; top:216pt; width:198pt; height:4pt; background:#5E9B47;"></div>
+  <div style="position:absolute; left:508pt; top:232pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#5E9B47;">產出</p>
+    <p class="num" style="margin-top:10pt;">12<span class="unit">+ 種</span></p>
+    <p class="lbl" style="margin-top:10pt;">架構模式</p>
+  </div>
+
+  <div style="position:absolute; left:718pt; top:216pt; width:198pt; height:4pt; background:#5E9B47;"></div>
+  <div style="position:absolute; left:718pt; top:232pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#5E9B47;">產出</p>
+    <p class="num" style="margin-top:10pt;">100<span class="unit">+ 項</span></p>
+    <p class="lbl" style="margin-top:10pt;">識別技巧</p>
+  </div>
+
+  <!-- 品質（橙） -->
+  <div style="position:absolute; left:88pt; top:352pt; width:198pt; height:4pt; background:#E08A2E;"></div>
+  <div style="position:absolute; left:88pt; top:368pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#E08A2E;">品質</p>
+    <p class="num" style="margin-top:10pt;">100<span class="unit">&nbsp;%</span></p>
+    <p class="lbl" style="margin-top:10pt;">驗證成功率（Phase 3）</p>
+  </div>
+
+  <div style="position:absolute; left:298pt; top:352pt; width:198pt; height:4pt; background:#E08A2E;"></div>
+  <div style="position:absolute; left:298pt; top:368pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#E08A2E;">品質</p>
+    <p class="num" style="margin-top:10pt;">73<span class="unit">&nbsp;%</span></p>
+    <p class="lbl" style="margin-top:10pt;">品質評分（超出目標）</p>
+  </div>
+
+  <!-- 效率（紫） -->
+  <div style="position:absolute; left:508pt; top:352pt; width:198pt; height:4pt; background:#7B5EA7;"></div>
+  <div style="position:absolute; left:508pt; top:368pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#7B5EA7;">效率</p>
+    <p class="num" style="margin-top:10pt;">8<span class="unit">&nbsp;小時</span></p>
+    <p class="lbl" style="margin-top:10pt;">全量處理時間</p>
+  </div>
+
+  <div style="position:absolute; left:718pt; top:352pt; width:198pt; height:4pt; background:#7B5EA7;"></div>
+  <div style="position:absolute; left:718pt; top:368pt; width:198pt;" data-pptx-merge="true">
+    <p class="key" style="color:#7B5EA7;">效率</p>
+    <p class="num" style="margin-top:10pt; font-size:34pt;">可複用</p>
+    <p class="lbl" style="margin-top:18pt;">沉澱為知識模式</p>
+  </div>
+
+  <!-- 底部圖例：色彩編碼說明 -->
+  <div style="position:absolute; left:88pt; top:490pt; width:828pt; height:1pt; background:#D8D8D8;"></div>
+  <div style="position:absolute; left:88pt; top:506pt; width:10pt; height:10pt; background:#2E6DA4;"></div>
+  <div style="position:absolute; left:104pt; top:504pt; width:80pt;"><p style="font-size:10pt; color:#6E6E6E;">規模</p></div>
+  <div style="position:absolute; left:184pt; top:506pt; width:10pt; height:10pt; background:#5E9B47;"></div>
+  <div style="position:absolute; left:200pt; top:504pt; width:80pt;"><p style="font-size:10pt; color:#6E6E6E;">產出</p></div>
+  <div style="position:absolute; left:280pt; top:506pt; width:10pt; height:10pt; background:#E08A2E;"></div>
+  <div style="position:absolute; left:296pt; top:504pt; width:80pt;"><p style="font-size:10pt; color:#6E6E6E;">品質</p></div>
+  <div style="position:absolute; left:376pt; top:506pt; width:10pt; height:10pt; background:#7B5EA7;"></div>
+  <div style="position:absolute; left:392pt; top:504pt; width:120pt;"><p style="font-size:10pt; color:#6E6E6E;">效率</p></div>
+
+</body>
+</html>
